@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Caça palavras</title>
+</head>
+<body>
+    
+    <style>
+        body{
+            background-image: url(imgs/beach-sunset-2.jpg);
+            background-repeat: no-repeat;
+            background-size: cover;
+            font-family: Georgia, 'Times New Roman', Times, serif;
+            color: aliceblue;
+        }
+
+        .wrapper{
+            width: 100%;
+            height: 100vh;
+            margin: 0 auto;
+            display: flex;
+            justify-content: center;
+            left: 1900px;
+            align-items: center;
+        }
+
+
+        table{
+            text-align: center;            
+            height: 800px;
+            width: 1200px;
+            border: none;
+            display: flex;
+            justify-content: center;
+           
+            align-items: center;
+        }
+
+        td{
+            border-right: solid white 2px;
+            border-bottom: solid white 2px;
+            border-top: solid rgb(255, 110, 134) 2px;
+            border-left: solid rgb(255, 110, 134) 2px;
+        }
+
+    </style>
+
+    <script>
+        m = new Array;
+        aux = new Array;
+        
+        m = [
+            ["S","I","W","Y","A","T","E","I","P","G","A","E"], 
+            ["E","S","E","M","E","R","E","E","P","A","D","O"],
+            ["S","O","E","H","H","E","I","A","A","T","E","U"],
+            ["N","R","P","C","E","X","R","A","T","O","R","R"],
+            ["M","U","N","E","E","L","O","V","O","F","R","E"],
+            ["I","N","W","C","C","L","F","E","L","E","A","O"],
+            ["S","H","S","H","O","O","E","C","A","U","L","S"],
+            ["T","E","D","M","C","S","B","E","N","A","T","A"],
+            ["T","S","N","A","B","S","E","R","T","E","H","C"],
+            ["R","N","T","S","N","T","I","X","A","L","E","P"],
+            ["P","F","F","A","N","U","B","A","O","C","N","E"],
+            ["U","A","I","D","R","H","E","M","E","N","E","R"]
+        ];
+
+        aux = [
+            [0,0,0,0,0,0,0,0,1,1,0,0],
+            [0,0,0,0,0,0,0,1,1,1,0,0],
+            [0,0,0,0,0,0,1,0,1,1,0,0],
+            [0,0,0,0,0,1,1,1,1,1,0,0],
+            [0,0,0,0,1,0,0,1,1,0,0,0],
+            [0,0,0,0,1,0,0,1,1,1,1,1],
+            [0,0,0,0,0,1,0,0,1,0,0,0],
+            [0,0,0,0,1,0,1,0,1,0,0,0],
+            [0,0,0,1,0,0,0,1,1,0,0,0],
+            [0,0,0,0,0,0,0,0,1,0,0,0],
+            [0,0,0,0,0,0,0,0,0,0,0,0],
+            [0,0,0,0,0,0,0,0,0,0,0,0]
+        ];
+            
+    document.write("<div class'wrapper'>")
+        document.write("<table border='2'>");
+            for(i=0;i<12;i++){
+                document.write("<tr>");
+                    for(j=0;j<12;j++){
+                        document.write("<td id='" + i.toString() + "-" + j.toString() + "'>" + m[i][j] + "</td>");
+                            if(aux[i][j] == 1){
+                                document.getElementById(i.toString() + '-' + j.toString()).style.cssText='background: #f5c63c;' + 'color: #000000;';
+                            }
+                    }
+                document.write("</tr>");
+            }
+        document.write("</table>");
+    document.write("</div>"); 
+
+    </script>
+    
+</body>
+</html>

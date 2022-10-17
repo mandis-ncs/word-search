@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //criando array 
+        matriz= new Array;
+        maux= new Array;
+
+        //criando matriz; cada letra representa uma linha, cada colchetes representa uma coluna
+           matriz =[["S","I","W","Y","A","T","E","I","P","G","A","E"], 
+                    ["E","S","E","M","E","R","E","E","P","A","D","O"],
+                    ["S","O","E","H","H","E","I","A","A","T","E","U"],
+                    ["N","R","P","C","E","X","R","A","T","O","R","R"],
+                    ["M","U","N","E","E","L","O","V","O","F","R","E"],
+                    ["I","N","W","C","C","L","F","E","L","E","A","O"],
+                    ["S","H","S","H","O","O","E","C","A","U","L","S"],
+                    ["T","E","D","M","C","S","B","E","N","A","T","A"],
+                    ["T","S","N","A","B","S","E","R","T","E","H","C"],
+                    ["R","N","T","S","N","T","I","X","A","L","E","P"],
+                    ["P","F","F","A","N","U","B","A","O","C","N","E"],
+                    ["U","A","I","D","R","H","E","M","E","N","E","R"]];
+
+
+           maux =[[0,0,0,0,0,0,0,0,1,1,0,0],
+                  
+        
+        
+        ]; 
+
+                   
+       document.write("<div class='container'>"); 
+        document.write("<table border='2'>");
+        for(linha=0; linha<12; linha++){
+            document.write("<tr>");
+            for(coluna=0; coluna<15; coluna++){
+                document.write("<td id='"+ linha.toString()+'-'+coluna.toString()+"'>"+matriz[linha][coluna]+"</td>");
+                 if(maux[linha][coluna] == 1){
+                  document.getElementById(linha.toString()+'-'+coluna.toString()).style.background='#006400';
+                  }            
+            }
+            document.write("</tr>");
+        }
+        document.write("</table>");
+    document.write("</div>");  
+
+</script>
+</body>
+</html>
